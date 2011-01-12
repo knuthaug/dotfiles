@@ -1,0 +1,4 @@
+Setup files for bash for symlinking from $HOME
+
+bash_functions
+  functions and aliases for being more productive and a DRY lifestyle.

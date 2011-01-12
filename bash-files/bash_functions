@@ -1,0 +1,40 @@
+alias mcc="mvn -q clean compile"
+
+function clean() {
+    find . -name \*~ | xargs rm
+}
+
+function get_branch() {
+    branch=`git status| grep 'On branch' | cut -f 4 -d' '`
+    if [ -z $branch ] 
+    then
+        echo "master"
+    else
+        echo $branch 
+    fi
+}
+
+
+function gcom() {
+    echo "committing changes for all previously tracked files"
+    git commit -a
+}
+
+function gpush() {
+    branch=`get_branch`
+    echo "pushing to origin branch $branch"
+    git push origin $branch
+
+}
+function gpull() {
+    branch=`get_branch`
+    echo "pulling from origin branch $branch"
+    git pull origin $branch    
+}
+
+function gfm() {
+    git fetch origin master
+}
+
+
+

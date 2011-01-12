@@ -1,0 +1,3 @@
+export VCPROMPT_FORMAT="[%b %m%u]"
+PS1='{\h:\W:\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\]->'
+export PS1
