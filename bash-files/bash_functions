@@ -15,6 +15,18 @@ function get_branch() {
 }
 
 
+function bcuke() {
+    bundle exec cucumber
+}
+
+function brake() {
+    bundle exec rake
+}
+
+function btest() {
+    bundle exec rspec
+}
+
 function gcom() {
     echo "committing changes for all previously tracked files"
     git commit -a
