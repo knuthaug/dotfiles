@@ -273,6 +273,9 @@
          ("\\.rb$"     . ruby-mode)
          ("Rakefile"   . ruby-mode)
          ("\\TODO.$"   . todo-mode)
+         ("\\.haml$"   . haml-mode)
+         ("\\.feature$"   . feature-mode)
+         
          ) auto-mode-alist)
       )
  

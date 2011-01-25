@@ -6,5 +6,6 @@
 (add-to-list 'load-path "~/.emacs.d/packages/bbdb/lisp")
 (add-to-list 'load-path "~/.emacs.d/packages/cedet")
 (add-to-list 'load-path "~/.emacs.d/packages/ecb")
+(add-to-list 'load-path "~/.emacs.d/packages/cucumber.el")
 (add-to-list 'load-path "/usr/share/emacs23/site-lisp/cedet-common/")
 (provide 'loadpaths)
