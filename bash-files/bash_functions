@@ -23,7 +23,7 @@ function brake() {
     bundle exec rake
 }
 
-function btest() {
+function btest() {
     bundle exec rspec
 }
 
