@@ -16,11 +16,11 @@ function get_branch() {
 
 
 function bcuke() {
-    bundle exec cucumber
+    bundle exec cucumber $*
 }
 
 function brake() {
-    bundle exec rake
+    bundle exec rake $*
 }
 
 function btest() {
