@@ -127,7 +127,7 @@
 (yas/load-directory "~/.emacs.d/packages/yasnippet/snippets")
 (yas/initialize)
  
-(load-file "/usr/share/emacs23/site-lisp/cedet-common/cedet.el")
+(load-file "~/.emacs.d/packages/cedet/common/cedet.el")
 
 ;; Emacs Code Browser.
 (require 'ecb-autoloads)
@@ -248,10 +248,8 @@
          ("\\.hh$"     . c-mode)
          ("\\.c$"      . c-mode)
          ("\\.h$"      . c-mode)
-         ("\\.java$"   . jde-mode)
+         ("\\.java$"   . java-mode)
          ("\\.m$"      . objc-mode)
-         ("\\.html$"   . html-helper-mode)
-         ("\\.shtml$"  . html-helper-mode)
          ("\\.php$"    . php-mode)
          ("\\gnus$"   . emacs-lisp-mode)
          ("\\emacs$"   . emacs-lisp-mode)
