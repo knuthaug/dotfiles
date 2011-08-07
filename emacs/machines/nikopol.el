@@ -12,4 +12,4 @@
  '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (foreground-color . "Black") (background-color . "White") (cursor-type . box) (cursor-color . "Red") (vertical-scroll-bars) (internal-border-width . 0) (fringe) (left-fringe . minimal) (right-fringe . minimal))))
 )
 
-(provide 'loopkin)
+(provide 'nikopol)
