@@ -48,5 +48,8 @@ function gfm() {
     git fetch origin master
 }
 
+alias debug-head="GET -Sed -H 'X-Debug: true' "
 
+alias sstat="svn status -u"
+alias sup="svn up"
 
