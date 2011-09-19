@@ -8,6 +8,7 @@
  '(auto-compression-mode t nil (jka-compr))
  '(case-fold-search t)
  '(column-number-mode t)
+ '(cua-mode t nil (cua-base))
  '(custom-buffer-indent 4)
  '(default-input-method "latin-1-prefix")
  '(display-time-mode t)

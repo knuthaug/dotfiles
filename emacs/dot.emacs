@@ -27,9 +27,10 @@
 (require 'lisp)
 (require 'js)
 (require 'c)
+(require 'java)
 (require 'haml)
 (require 'cucumber)
 ;;custom for machine
-(require 'yorick)
+;(require 'yorick)
 
 

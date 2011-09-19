@@ -1,5 +1,5 @@
 (setq inferior-lisp-program "/usr/bin/sbcl")
-(require 'slime-autoloads)
+;(require 'slime-autoloads)
 (setq slime-net-coding-system 'utf-8-unix)
 
 (add-hook 'lisp-mode-hook
