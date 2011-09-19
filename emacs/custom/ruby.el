@@ -16,7 +16,7 @@
             (set (make-local-variable 'indent-tabs-mode) 'nil)
             (set (make-local-variable 'tab-width) 2)
                                         ;            (imenu-add-to-menubar "IMENU")
-            (local-unset-ket "TAB")
+            (local-unset-key "TAB")
             ;(define-key ruby-mode-map "TAB" 'yas/expand)
             (define-key ruby-mode-map "\C-m" 'newline-and-indent) ;Not sure if this line is 100% right but it works!
             (require 'ruby-electric)
