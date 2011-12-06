@@ -1,3 +1,5 @@
+alias testdriver="java -jar /lib/java/JsTestDriver.jar --port 4242"
+alias runtests="java -jar /lib/java/JsTestDriver.jar --tests all"
 alias mcc="mvn -q clean compile"
 
 function clean() {
