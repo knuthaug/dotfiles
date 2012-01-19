@@ -256,6 +256,7 @@
          ("\\.sgml$"   . sgml-mode)
          ("\\.xml$"    . nxml-mode)
          ("\\.xsd$"    . nxml-mode)
+         ("\\.html$"    . nxml-mode)
          ("\\.xsl$"    . nxml-mode)
          ("\\.pl$"     . cperl-mode)
          ("\\.pm$"     . cperl-mode)
