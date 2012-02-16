@@ -30,7 +30,8 @@
 (require 'java)
 (require 'haml)
 (require 'cucumber)
-;;custom for machine
-;(require 'yorick)
+(require 'xml)
+;;custom for 
+;(require 'nikopol)
 
 

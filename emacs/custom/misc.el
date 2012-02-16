@@ -32,7 +32,7 @@
 (menu-bar-mode 1)
  
 ;; Hide toolbar.
-(tool-bar-mode nil)
+(tool-bar-mode 0)
  
 ;; Hide scrollbar.
 (scroll-bar-mode -1)
@@ -257,6 +257,7 @@
          ("\\.xml$"    . nxml-mode)
          ("\\.xsd$"    . nxml-mode)
          ("\\.html$"    . nxml-mode)
+         ("\\.ftl$"    . nxml-mode)
          ("\\.xsl$"    . nxml-mode)
          ("\\.pl$"     . cperl-mode)
          ("\\.pm$"     . cperl-mode)
