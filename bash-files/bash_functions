@@ -1,6 +1,10 @@
 alias testdriver="java -jar /lib/java/JsTestDriver.jar --port 4242"
 alias runtests="java -jar /lib/java/JsTestDriver.jar --tests all"
 alias mcc="mvn -q clean compile"
+alias proxy="ssh -A -L3128:skydd:3128 ssh.api.no"
+alias mysql-test-proxy="ssh -A -L3306:ecedb.test.api.no:3306 ssh.api.no"
+alias mysql-prod-proxy="ssh -A -L3306:mysql.api.kunder.linpro.no:3306 ssh.api.no"
+alias what-to-push="git diff --stat origin/master HEAD"
 
 function clean() {
     find . -name \*~ | xargs rm
@@ -62,6 +66,18 @@ function refresh() {
     runjetty
 } 
 
+function riak-get() {
+    curl -s http://127.0.0.1:8098/buckets/$1/keys/$2
+}
+
+function riak-delete() {
+    curl -X DELETE http://127.0.0.1:8098/buckets/$1/keys/$2
+}
+
+function riak-keys() {
+    curl -s http://127.0.0.1:8098/buckets/$1/keys?keys=true
+}
+
 alias debug-head="GET -Sed -H 'X-Debug: true' "
 
 alias sstat="svn status -u"
@@ -71,4 +87,4 @@ alias runjetty="mvn jetty:run | tee stdout.log"
 alias debugjetty="MAVEN_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005' mvn jetty:run | tee stdout.log"
 alias review="post-review --server http://apindev01/review"
 alias sonarize="mvn sonar:sonar -Psonar"
-
+alias mvn3="M2_HOME=/opt/maven3 mvn-3"
