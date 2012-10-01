@@ -5,6 +5,14 @@ alias proxy="ssh -A -L3128:skydd:3128 ssh.api.no"
 alias mysql-test-proxy="ssh -A -L3306:ecedb.test.api.no:3306 ssh.api.no"
 alias mysql-prod-proxy="ssh -A -L3306:mysql.api.kunder.linpro.no:3306 ssh.api.no"
 alias what-to-push="git diff --stat origin/master HEAD"
+alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+#git flow
+alias gff="git flow feature"
+alias gfr="git flow release"
+alias gfh="git flow hotfix"
+alias gfs="git flow support"
+
 
 function clean() {
     find . -name \*~ | xargs rm
