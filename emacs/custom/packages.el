@@ -1,6 +1,6 @@
 (when
     (load
-     (expand-file-name "~/.emacs.d/packages/elpa/package.el"))
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
 
 (provide 'packages)
