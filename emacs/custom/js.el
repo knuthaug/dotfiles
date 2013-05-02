@@ -1,7 +1,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (autoload 'js2-mode "js2" nil t)
 ;;(add-hook 'js2-mode-hook (lambda () (smartparens-mode 1)))
-(require 'js2-refactor)
+;(require 'js2-refactor)
 
 ;; js2-mode steals TAB, let's steal it back for yasnippet
 (defun js2-tab-properly ()
@@ -12,10 +12,10 @@
       (if (looking-back "^\s*")
           (back-to-indentation)))))
 
-(define-key js2-mode-map (kbd "TAB") 'js2-tab-properly)
+;(define-key js2-mode-map (kbd "TAB") 'js2-tab-properly)
 
 ;; Don't redefine C-a for me please, js2-mode
-(define-key js2-mode-map (kbd "C-a") nil)
+;(define-key js2-mode-map (kbd "C-a") nil)
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function\\) *("
