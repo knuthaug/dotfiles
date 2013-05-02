@@ -1,8 +1,6 @@
 (require 'auto-complete)
-;(global-auto-complete-mode t)
 
-(require 'semantic-ia)
-;(require 'auto-complete-yasnippet nil t)
+(require 'auto-complete-yasnippet nil t)
 (require 'auto-complete-python nil t)
 (require 'auto-complete-css nil t) 
 (require 'auto-complete-emacs-lisp nil t)  
@@ -21,9 +19,7 @@
 (setq ac-dwim t)
   
  (set-default 'ac-sources 
-              '(ac-source-semantic 
-                ;ac-source-yasnippet 
-                ac-source-abbrev 
+              '(ac-source-abbrev 
                 ac-source-words-in-buffer 
                 ac-source-files-in-current-dir 
                 ac-source-symbols

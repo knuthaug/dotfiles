@@ -44,7 +44,7 @@
 (transient-mark-mode t)		; keep highligt, deactivate mark on change
 (icomplete-mode)		; show incremental completions in minibuffer
 ;(resize-minibuffer-mode t)	; resize minibuffer to fit contents
-(pc-selection-mode)
+
 (global-font-lock-mode t)			; fontify when possible
 (setq minibuffer-max-depth nil)
 (setq visible-bell t)
