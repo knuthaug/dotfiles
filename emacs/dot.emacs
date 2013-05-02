@@ -15,6 +15,7 @@
 (require 'functions)
 (require 'complete)
 (require 'drag)
+(require 'packages)
 ;(require 'wrap-region)
 (require 'blog)
 
@@ -30,8 +31,5 @@
 (require 'java)
 (require 'haml)
 (require 'cucumber)
-(require 'xml)
-;;custom for 
-;(require 'nikopol)
-
-
+;;custom for machine
+;(require 'loopkin)
