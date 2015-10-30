@@ -12,7 +12,8 @@
  
 ;; Want to use this in many modes.
 (require 'flymake)
- 
+(load "editorconfig")
+
 ;; Custom file.
 (setq custom-file "~/.emacs.d/custom/custom.el")
 (load custom-file)
@@ -187,7 +188,7 @@
 (setq uniquify-buffer-name-style 'forward)
  
 ;; Minimal finge.
-(fringe-mode 'minimal)
+;(fringe-mode 'minimal)
  
 ;; Auto complete settings.
 ;; (require 'auto-complete)
