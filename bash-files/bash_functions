@@ -32,12 +32,15 @@ alias sup="svn up"
 alias minstall="mvn clean install -Dmaven.test.skip"
 alias runjetty="mvn jetty:run | tee stdout.log"
 alias debugjetty="MAVEN_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005' mvn jetty:run | tee stdout.log"
-alias review="post-review --server http://apindev01/review"
 alias sonarize="mvn sonar:sonar -Psonar"
 #alias mvn="M2_HOME=/opt/maven3 mvn-3"
 
 alias r10k='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -v"'
 alias r10p='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -pv"'
+
+function docker_cleanup() {
+  docker images --no-trunc| grep none | awk '{print $3}' | xargs -r docker rmi -f
+}
 
 function goto() {
   ssh -t ssh.api.no ssh -t $1
