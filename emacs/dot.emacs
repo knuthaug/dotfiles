@@ -32,4 +32,4 @@
 (require 'haml)
 (require 'cucumber)
 ;;custom for machine
-;(require 'loopkin)
+(require 'loopkin)

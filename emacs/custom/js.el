@@ -16,6 +16,8 @@
 
 ;; Don't redefine C-a for me please, js2-mode
 ;(define-key js2-mode-map (kbd "C-a") nil)
+(custom-set-variables
+ '(javascript-indent-level 2))
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function\\) *("
