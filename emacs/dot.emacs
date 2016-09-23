@@ -7,7 +7,7 @@
 (require 'loadpaths)
 (require 'misc)
 (require 'custom)
-(require 'my-bbdb)
+;(require 'my-bbdb)
 (require 'hippie)
 (require 'fonts)
 (require 'printing)
@@ -17,7 +17,7 @@
 (require 'drag)
 (require 'packages)
 ;(require 'wrap-region)
-(require 'blog)
+;(require 'blog)
 
 ;; misc setup for programming
 (require 'css)
@@ -26,10 +26,10 @@
 (require 'dtd)
 (require 'perl)
 (require 'lisp)
-(require 'js)
 (require 'c)
+(require 'js)
 (require 'java)
-(require 'haml)
+;(require 'haml)
 (require 'cucumber)
 ;;custom for machine
 (require 'loopkin)
