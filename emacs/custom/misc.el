@@ -13,7 +13,8 @@
  
 ;; Want to use this in many modes.
 (require 'flymake)
- 
+(load "editorconfig")
+
 ;; Custom file.
 (setq custom-file "~/.emacs.d/custom/custom.el")
 (load custom-file)
@@ -128,10 +129,10 @@
 (yas/load-directory "~/.emacs.d/packages/yasnippet/snippets")
 (yas/initialize)
  
-(load-file "~/.emacs.d/packages/cedet/common/cedet.el")
+;(load-file "~/.emacs.d/packages/cedet/common/cedet.el")
 
 ;; Emacs Code Browser.
-(require 'ecb-autoloads)
+;(require 'ecb-autoloads)
  
 ;; Easy building of regular expressions.
 (require 're-builder)
@@ -276,7 +277,7 @@
          ("\\.rb$"     . ruby-mode)
          ("Rakefile"   . ruby-mode)
          ("\\TODO.$"   . todo-mode)
-         ("\\.haml$"   . haml-mode)
+;         ("\\.haml$"   . haml-mode)
          ("\\.feature$"   . feature-mode)
          
          ) auto-mode-alist)

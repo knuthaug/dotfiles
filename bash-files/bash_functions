@@ -1,17 +1,36 @@
 alias testdriver="java -jar /lib/java/JsTestDriver.jar --port 4242"
 alias runtests="java -jar /lib/java/JsTestDriver.jar --tests all"
 alias mcc="mvn -q clean compile"
-alias proxy="ssh -A -L3128:skydd:3128 ssh.api.no"
+alias jump="ssh jump.api.no"
+alias jumpcmd="ssh -t jump.api.no ssh -t"
+alias proxy="ssh -D1080 jump.api.no"
+alias oldproxy="ssh -A -L3128:skydd:3128 ssh.api.no"
 alias mysql-test-proxy="ssh -A -L3306:ecedb.test.api.no:3306 ssh.api.no"
 alias mysql-prod-proxy="ssh -A -L3306:mysql.api.kunder.linpro.no:3306 ssh.api.no"
 alias what-to-push="git diff --stat origin/master HEAD"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias upgrade-parent="mvn -U versions:update-parent -DgenerateBackupPoms=false"
+
 
 #git flow
 alias gff="git flow feature"
 alias gfr="git flow release"
 alias gfh="git flow hotfix"
 alias gfs="git flow support"
+alias gc="git commit"
+alias rebase-me="git rebase -i \$(git merge-base HEAD master)"
+
+#git reflow
+alias reflow="git reflow"
+alias startbranch="git reflow start"
+alias review="git reflow review"
+alias deliver="git reflow deliver"
+
+alias gp="git pull"
+alias gpp="git pull && git push"
+alias gcom="git commit"
+alias master="git checkout master"
+alias goto="git checkout"
 
 alias debug-head="GET -Sed -H 'X-Debug: true' "
 
@@ -20,16 +39,20 @@ alias sup="svn up"
 alias minstall="mvn clean install -Dmaven.test.skip"
 alias runjetty="mvn jetty:run | tee stdout.log"
 alias debugjetty="MAVEN_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005' mvn jetty:run | tee stdout.log"
-alias review="post-review --server http://apindev01/review"
 alias sonarize="mvn sonar:sonar -Psonar"
 #alias mvn="M2_HOME=/opt/maven3 mvn-3"
 
-function goto() {
-  ssh -t ssh.api.no ssh -t $1
+alias r10k='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -v"'
+alias r10p='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -pv"'
+
+function docker_cleanup() {
+  docker images --no-trunc| grep none | awk '{print $3}' | xargs -r docker rmi -f
 }
 
 function clean() {
     find . -name \*~ | xargs rm
+    find . -name #\* | xargs rm
+    find . -name \.#\* | xargs rm
 }
 
 function get_branch() {
