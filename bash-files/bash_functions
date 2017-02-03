@@ -3,7 +3,8 @@ alias runtests="java -jar /lib/java/JsTestDriver.jar --tests all"
 alias mcc="mvn -q clean compile"
 alias jump="ssh jump.api.no"
 alias jumpcmd="ssh -t jump.api.no ssh -t"
-alias proxy="ssh -D1080 jump.api.no"
+alias api="ssh jump.api.no"
+alias proxy="ssh -D1082 jump.api.no"
 alias oldproxy="ssh -A -L3128:skydd:3128 ssh.api.no"
 alias mysql-test-proxy="ssh -A -L3306:ecedb.test.api.no:3306 ssh.api.no"
 alias mysql-prod-proxy="ssh -A -L3306:mysql.api.kunder.linpro.no:3306 ssh.api.no"
@@ -33,14 +34,18 @@ alias master="git checkout master"
 alias goto="git checkout"
 
 alias debug-head="GET -Sed -H 'X-Debug: true' "
+alias debug-head="GET -Sed -H 'X-Debug: true' "
+alias debug-head="GET -Sed -H 'X-Debug: true'"
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
 
 alias sstat="svn status -u"
 alias sup="svn up"
 alias minstall="mvn clean install -Dmaven.test.skip"
 alias runjetty="mvn jetty:run | tee stdout.log"
 alias debugjetty="MAVEN_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005' mvn jetty:run | tee stdout.log"
-alias sonarize="mvn sonar:sonar -Psonar"
-#alias mvn="M2_HOME=/opt/maven3 mvn-3"
+alias r10k='ssh puppet1-osl2.a "sudo r10k deploy environment -v"'
 
 alias r10k='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -v"'
 alias r10p='ssh jump.api.no ssh puppet1-osl2.api.c.bitbit.net "sudo r10k deploy environment -pv"'
