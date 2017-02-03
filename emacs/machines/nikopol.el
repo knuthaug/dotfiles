@@ -9,7 +9,7 @@
  '(ecb-options-version "2.40")
  '(mac-option-modifier nil)
  '(mac-function-modifier 'meta)
- '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (foreground-color . "Black") (background-color . "White") (cursor-type . box) (cursor-color . "Red") (vertical-scroll-bars) (internal-border-width . 0) (fringe) (left-fringe . minimal) (right-fringe . minimal))))
+ '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (foreground-color . "Black") (background-color . "White") (cursor-type . box) (cursor-color . "Red") (vertical-scroll-bars) (internal-border-width . 0) (fringe))))
 )
 
 (provide 'nikopol)
