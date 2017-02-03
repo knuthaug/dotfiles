@@ -8,6 +8,7 @@
 (setq minor-mode-alist
       (cons '(flyspell-mode (" Fly[" ispell-dictionary "]")) minor-mode-alist))
 
+(setq ispell-program-name "/usr/local/bin/ispell")
 ;;; misc.el --- Stuff that don't fit anywhere else goes here
  
 ;; Want to use this in many modes.
@@ -187,7 +188,7 @@
 (setq uniquify-buffer-name-style 'forward)
  
 ;; Minimal finge.
-(fringe-mode 'minimal)
+;(fringe-mode 'minimal)
  
 ;; Auto complete settings.
 ;; (require 'auto-complete)
