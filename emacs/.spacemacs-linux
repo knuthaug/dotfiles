@@ -48,7 +48,7 @@ values."
      shell-script
      puppet
      react
-     ;; git
+     git
      markdown
      org
      (shell :variables
