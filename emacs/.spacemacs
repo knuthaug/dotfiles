@@ -48,7 +48,7 @@ values."
      markdown
      org
      yaml
-     shell-script
+     shell-scripts
      docker
      react
      (shell :variables
