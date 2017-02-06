@@ -40,10 +40,14 @@ values."
      helm
      html
      ruby
-     (osx :variables osx-use-option-as-meta nil)
      auto-completion
      ;; better-defaults
      emacs-lisp
+     yaml
+     docker
+     shell-script
+     puppet
+     react
      ;; git
      markdown
      org
