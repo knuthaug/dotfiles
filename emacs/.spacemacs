@@ -123,7 +123,7 @@ values."
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 7))
-   ;; True if the home buffer should respond to resize events.
+   hybrid-mode-default-state 'emacs;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
@@ -305,7 +305,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-set-key (kbd "C-x y") 'yas-expand)
   (setq-default js2-basic-offset 2)
-  (setq-default js-indent-level 2)
+  (setq-default js-indent-level 4)
   (setq-default mac-right-option-modifier nil)
   )
 
