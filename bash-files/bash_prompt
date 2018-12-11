@@ -1,3 +1,15 @@
 export VCPROMPT_FORMAT="[%b %m%u]"
-PS1='#patashnik:\W [`kubectl config get-contexts | grep "*" | cut -f10 -d" "`]\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\]->'
+
+get_context() {
+    OIFS="$IFS"
+    IFS=' '
+    set -- $(kubectl config get-contexts | grep '*' | tr -s '[:space:]' | cut -f2,5 -d' ' | awk '{print $1" "$2}')
+    #set -- $(echo "one two three four" | awk '{print $2" "$4}')
+    IFS="$OIFS"
+    context=$1 namespace=$2
+    #kubectl config get-contexts | grep "*" | cut -f10 -d" "
+    echo "${context}:${namespace}"
+}
+
+PS1='#patashnik:\W [`get_context`]\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\]->'
 export PS1
