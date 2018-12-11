@@ -22,6 +22,9 @@ alias master="git checkout master"
 alias goto="git checkout"
 alias glog="git log --oneline --decorate"
 
+alias mkdir="mkdir -pv"
+#alias ls="ls -lap"
+
 #kubernetes
 alias k="kubectl"
 #alias "kc"="kubectl config use-context"
