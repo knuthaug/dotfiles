@@ -10,6 +10,7 @@ get_context() {
     #kubectl config get-contexts | grep "*" | cut -f10 -d" "
     echo "${context}:${namespace}"
 }
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 
-PS1='#patashnik:\W [`get_context`]\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\]->'
+PS1='# $(kube_ps1)\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\] \W ->'
 export PS1
