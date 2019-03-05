@@ -1,5 +1,5 @@
 export VCPROMPT_FORMAT="[%b %m%u]"
-
+export KUBE_PS1_SEPARATOR=""
 get_context() {
     OIFS="$IFS"
     IFS=' '
