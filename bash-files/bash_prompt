@@ -12,5 +12,5 @@ get_context() {
 }
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 BRANCH_SYMBOL='⎇'
-PS1='# $(kube_ps1)\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " \[$(tput setaf 7c)\]$BRANCH_SYMBOL \[$(tput setaf 5)\]$(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\] \W ->'
+PS1='# $(kube_ps1)\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "[ ]" ]; then echo " \[$(tput setaf 2)\]$BRANCH_SYMBOL \[$(tput setaf 5)\]$(vcprompt)"; fi`\[$(tput setaf 2)\]\[$(tput sgr0)\] \W ->'
 export PS1
