@@ -7,21 +7,25 @@ alias gfr="git flow release"
 alias gfh="git flow hotfix"
 alias gfs="git flow support"
 alias gc="git commit"
+alias gs="git stash"
+alias gsp="git stash pop"
 alias rebase-me="git rebase -i \$(git merge-base HEAD master)"
 
 #git reflow
 alias reflow="git reflow"
-alias startbranch="git reflow start"
 alias review="git reflow review"
 alias deliver="git reflow deliver"
 
 alias gp="git pull"
 alias gpp="git pull && git push"
-alias gcom="git commit"
 alias master="git checkout master"
 alias goto="git checkout"
+alias g="git status"
+alias gap="git add --patch"
+alias gca='git commit --amend --no-edit'
 alias glog="git log --oneline --decorate"
-
+alias merge="gh pr merge --squash"
+alias gpr="gh pr checkout"
 alias mkdir="mkdir -pv"
 #alias ls="ls -lap"
 
@@ -37,6 +41,11 @@ function kc() {
   else 
     kubectl config current-context
   fi
+}
+
+function startbranch() {
+    git checkout -b "$1"
+    git push -u origin "$1"
 }
 
 alias debug-head="GET -Sed -H 'X-Debug: true' "
