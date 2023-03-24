@@ -56,6 +56,7 @@ values."
      shell-scripts
      docker
      react
+     tern
      syntax-checking
      version-control
      ;; org

@@ -1,7 +1,7 @@
 alias what-to-push="git diff --stat origin/master HEAD"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-#git flow
+
 alias gff="git flow feature"
 alias gfr="git flow release"
 alias gfh="git flow hotfix"
@@ -11,21 +11,15 @@ alias gs="git stash"
 alias gsp="git stash pop"
 alias rebase-me="git rebase -i \$(git merge-base HEAD master)"
 
-#git reflow
-alias reflow="git reflow"
-alias review="git reflow review"
-alias deliver="git reflow deliver"
-
 alias gp="git pull"
 alias gpp="git pull && git push"
 alias master="git checkout master"
-alias goto="git checkout"
 alias g="git status"
 alias gap="git add --patch"
 alias gca='git commit --amend --no-edit'
 alias glog="git log --oneline --decorate"
 alias merge="gh pr merge --squash"
-alias gpr="gh pr checkout"
+alias gpr="gh pr"
 alias mkdir="mkdir -pv"
 #alias ls="ls -lap"
 
@@ -56,6 +50,7 @@ alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
 
+
 function docker_cleanup() {
   docker images --no-trunc| grep none | awk '{print $3}' | xargs -r docker rmi -f
 }
@@ -77,17 +72,6 @@ function get_branch() {
 }
 
 
-function bcuke() {
-    bundle exec cucumber $*
-}
-
-function brake() {
-    bundle exec rake $*
-}
-
-function btest() {
-    bundle exec rspec
-}
 
 function gcom() {
     echo "committing changes for all previously tracked files"
@@ -110,27 +94,22 @@ function gfm() {
     git fetch origin master
 }
 
-function mod() {
-    svn status -u | egrep '^M'
+function goto() {
+  len=`expr "$1" : '.*'`
+  re='^[0-9]+$'
+  isnumber=0
+
+  if  [[ $1 =~ $re ]]; then
+    isnumber=1
+  fi
+
+  if [[ $len -eq 4 ]]  && [[ $isnumber -eq 1 ]]; then
+    gh pr checkout $1
+  else
+    git checkout $1
+  fi
 }
 
-
-function refresh() {
-    cd .. 
-    minstall
-    cd $1-webapp
-    runjetty
-} 
-
-function riak-get() {
-    curl -s http://127.0.0.1:8098/buckets/$1/keys/$2
+function epoch() {
+  node -e 'let e = process.argv[1]; if(e.length === 10) { e = e * 1000 }; console.log(`epoch ${e} -> ${new Date(+e)}`);' $1
 }
-
-function riak-delete() {
-    curl -X DELETE http://127.0.0.1:8098/buckets/$1/keys/$2
-}
-
-function riak-keys() {
-    curl -s http://127.0.0.1:8098/buckets/$1/keys?keys=true
-}
-
